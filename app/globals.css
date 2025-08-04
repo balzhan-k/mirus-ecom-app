@@ -29,3 +29,24 @@ a {
     color-scheme: dark;
   }
 }
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-scroll {
+  animation: scroll 10s linear infinite;
+}
+
+
+.text-shadow-letters {
+  text-shadow: 
+    2px 2px 0px rgba(15, 228, 51, 0.3),
+    4px 4px 0px rgba(0,0,0,0.2),
+    6px 6px 0px rgba(0,0,0,0.1);
+}

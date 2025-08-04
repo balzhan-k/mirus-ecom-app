@@ -10,6 +10,7 @@ module.exports = {
       fontFamily: {
         sans: ["var(--font-inter)", "Inter", "system-ui", "sans-serif"],
         serif: ["var(--font-playfair)", "Playfair Display", "serif"],
+        'great-vibes': ["var(--font-great-vibes)", "Great Vibes", "cursive"],
       },
     },
   },
