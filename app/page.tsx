@@ -6,16 +6,12 @@ import { ProductMarquee } from "@/components/product-marquee";
 
 //query products from stripe API
 export default async function Home() {
-  const products = await stripe.products.list({
-    expand: ["data.default_price"], //говорит Stripe API включить полную информацию о цене (сумма, валюта, тип)
-    limit: 5,
-  });
-  console.log(products);
+  const products = await stripe.products.list();
+
 
   return (
-    <div className="min-h-screen ">
-      {/* Hero Section */}
-      <section className="relative min-h-[80vh] flex items-center overflow-hidden bg-orange-50 py-10 lg:py-0">
+    <div className="min-h-screen bg-orange-50">
+      <section className="relative min-h-[80vh] flex items-center overflow-hidden py-10 lg:py-0">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 max-w-7xl mx-auto px-8 items-center">
           <div className="z-10">
             <h1 className="font-serif text-5xl lg:text-6xl font-bold font-italic text-amber-900 mb-6 leading-tight tracking-tight">
@@ -49,13 +45,42 @@ export default async function Home() {
         </div>
       </section>
 
-      {/* Featured Section */}
-      <section className="py-24 px-8">
-        <div className="max-w-7xl mx-auto">
+      <section className="py-20 px-0">
+        <div className="max-w-8xl mx-auto">
           <h2 className="font-serif text-4xl lg:text-5xl font-bold text-gray-900 text-center mb-12">
             Featured Pieces
           </h2>
           <ProductMarquee products={products.data} />
+        </div>
+      </section>
+
+
+      <section className="relative min-h-[80vh] flex items-center overflow-hidden py-10 lg:py-0">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 max-w-7xl mx-auto px-8 items-center">
+        <div className="relative">
+            <div className="rounded-2xl overflow-hidden shadow-2xl">
+              <Image
+                alt="Banner Image"
+                width={600}
+                height={600}
+                src="/banner2.jpg"
+                priority
+                className="w-full h-auto object-cover"
+              />
+            </div>
+          </div>
+
+
+          <div className="z-10">
+            <h1 className="font-serif text-5xl lg:text-6xl font-bold font-italic text-amber-900 mb-6 leading-tight tracking-tight">
+            Designed with Soul, Crafted with Heart
+            </h1>
+            <p className="text-xl text-neutral-700 mb-10 leading-relaxed">
+            At MIR-US-ME, every design is purposefully created and then meticulously brought to life by skilled artisans. We believe in the soul of our original designs and the heart poured into every detail, using ethically sourced materials to create unique and meaningful treasures.
+            </p>
+            
+          </div>
+          
         </div>
       </section>
     </div>
