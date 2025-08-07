@@ -1,3 +1,5 @@
+"use client";
+
 import Stripe from "stripe";
 import Link from "next/link";
 import { Card, CardContent, CardHeader, CardTitle } from "./ui/card";

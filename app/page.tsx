@@ -47,7 +47,7 @@ export default async function Home() {
 
       <section className="py-20 px-0">
         <div className="max-w-8xl mx-auto">
-          <h2 className="font-serif text-4xl lg:text-5xl font-bold text-gray-900 text-center mb-12">
+          <h2 className="font-serif text-4xl lg:text-5xl font-bold text-amber-900 text-center mb-12">
             Featured Pieces
           </h2>
           <ProductMarquee products={products.data} />
